@@ -84,10 +84,7 @@ export default class RecentGames extends React.Component {
           </tr>
         </thead>
         {matchIds.map(matchId =>
-          <tbody
-            key={matchId}
-            style={{ borderTop: '2px solid #ddd', padding: '1rem 0' }}
-          >
+          <tbody key={matchId} style={{ padding: '1rem 0' }}>
             {matchPlayers[matchId].map((playerId, i) => {
               const match = matchesByPlayer[playerId][matchId];
               const show = i === 0;
@@ -138,7 +135,11 @@ const MatchResult = match => {
       </Result>
     : <Result />;
 };
-const Result = styled.td`color: ${props => (props.won ? 'green' : 'red')};`;
+const Result = styled.td`
+  color: ${props => (props.won ? 'green' : 'red')};
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+`;
 
 const PlayerName = ({ playerId }) =>
   <td>
@@ -172,13 +173,13 @@ const HeroImg = ({ hero_id, heroes }) => {
 };
 
 const Links = ({ match_id }) =>
-  <td>
+  <td style={{ paddingLeft: '2rem', opacity: 0.5 }}>
     <a href={`https://dotabuff.com/matches/${match_id}`}>dotabuff</a> |{' '}
     <a href={`https://opendota.com/matches/${match_id}`}>opendota</a>
   </td>;
 
 const MatchDate = ({ show, start_time, duration }) =>
-  <td style={{ textAlign: 'right' }}>
+  <Subdued style={{ textAlign: 'right' }}>
     {show
       ? new Date((start_time + duration) * 1000).toLocaleString('en-US', {
           weekday: 'short',
@@ -188,7 +189,12 @@ const MatchDate = ({ show, start_time, duration }) =>
           minute: '2-digit',
         })
       : null}
-  </td>;
+  </Subdued>;
+const Subdued = styled.td`
+  color: #999;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+`;
 
 const addMatches = (playerId, matches) => state => {
   const matchIds = new Set(state.matchIds.concat(matches.map(m => m.match_id)));
