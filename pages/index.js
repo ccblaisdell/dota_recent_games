@@ -70,48 +70,68 @@ export default class RecentGames extends React.Component {
   render() {
     const { heroes, matchesByPlayer, matchIds, matchPlayers } = this.state;
     return (
-      <Table>
-        <thead>
-          <tr>
-            <th />
-            <th />
-            <th />
-            <th />
-            <th>K</th>
-            <th>D</th>
-            <th>A</th>
-            <th />
-          </tr>
-        </thead>
-        {matchIds.map(matchId =>
-          <tbody key={matchId} style={{ padding: '1rem 0' }}>
-            {matchPlayers[matchId].map((playerId, i) => {
-              const match = matchesByPlayer[playerId][matchId];
-              const show = i === 0;
-              return (
-                <tr
-                  key={playerId}
-                  style={{
-                    borderTop: show ? '1px solid #ccc' : '',
-                  }}
-                >
-                  <HeroImg {...match} heroes={heroes} />
-                  <MatchResult {...match} show={show} />
-                  <PlayerName playerId={playerId} />
-                  <MatchDate {...match} show={show} />
-                  <K {...match} />
-                  <D {...match} />
-                  <A {...match} />
-                  <Links {...match} />
-                </tr>
-              );
-            })}
-          </tbody>
-        )}
-      </Table>
+      <div>
+        <Title>Recent matches</Title>
+        <Desc>
+          Most recent 20 games per player. When a match is listed, there is no
+          guarantee that it shows all the players who were in the party.
+        </Desc>
+        <Table>
+          <thead>
+            <tr>
+              <th />
+              <th />
+              <th />
+              <th />
+              <th style={{ textAlign: 'right', padding: '2px 4px' }}>K</th>
+              <th style={{ textAlign: 'right', padding: '2px 4px' }}>D</th>
+              <th style={{ textAlign: 'right', padding: '2px 4px' }}>A</th>
+              <th style={{ textAlign: 'right', padding: '2px 4px' }}>party</th>
+              <th />
+            </tr>
+          </thead>
+          {matchIds.map(matchId => (
+            <tbody key={matchId} style={{ padding: '1rem 0' }}>
+              {matchPlayers[matchId].map((playerId, i) => {
+                const match = matchesByPlayer[playerId][matchId];
+                const show = i === 0;
+                return (
+                  <tr
+                    key={playerId}
+                    style={{
+                      borderTop: show ? '1px solid #ccc' : '',
+                    }}
+                  >
+                    <HeroImg {...match} heroes={heroes} />
+                    <MatchResult {...match} show={show} />
+                    <PlayerName playerId={playerId} />
+                    <MatchDate {...match} show={show} />
+                    <K {...match} />
+                    <D {...match} />
+                    <A {...match} />
+                    <PartySize {...match} show={show} />
+                    <Links {...match} show={show} />
+                  </tr>
+                );
+              })}
+            </tbody>
+          ))}
+        </Table>
+      </div>
     );
   }
 }
+
+const Title = styled.h1`
+  font-family: monospace;
+  font-size: 16px;
+`;
+
+const Desc = styled.p`
+  font-family: monospace;
+  font-size: 12px;
+  color: #999;
+`;
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -129,11 +149,7 @@ const isWin = ({ player_slot, radiant_win }) =>
 const MatchResult = match => {
   const won = isWin(match);
   const text = won ? 'WON :D' : 'lost';
-  return match.show
-    ? <Result won={won}>
-        {text}
-      </Result>
-    : <Result />;
+  return match.show ? <Result won={won}>{text}</Result> : <Result />;
 };
 const Result = styled.td`
   color: ${props => (props.won ? 'green' : 'red')};
@@ -141,23 +157,14 @@ const Result = styled.td`
   padding-right: 1rem !important;
 `;
 
-const PlayerName = ({ playerId }) =>
-  <td>
-    {PLAYER_NAMES[playerId]}
-  </td>;
-const K = ({ kills }) =>
-  <N>
-    {kills}
-  </N>;
-const D = ({ deaths }) =>
-  <N>
-    {deaths}
-  </N>;
-const A = ({ assists }) =>
-  <N>
-    {assists}
-  </N>;
-const N = styled.td`text-align: right;`;
+const PlayerName = ({ playerId }) => <td>{PLAYER_NAMES[playerId]}</td>;
+const K = ({ kills }) => <N color="hsl(120, 60%, 40%)">{kills}</N>;
+const D = ({ deaths }) => <N color="#999">{deaths}</N>;
+const A = ({ assists }) => <N color="hsl(0, 40%, 40%)">{assists}</N>;
+const N = styled.td`
+  text-align: right;
+  color: ${props => props.color || null};
+`;
 
 const HeroImg = ({ hero_id, heroes }) => {
   if (!Object.keys(heroes).length) return <td />;
@@ -172,24 +179,32 @@ const HeroImg = ({ hero_id, heroes }) => {
   );
 };
 
-const Links = ({ match_id }) =>
-  <td style={{ paddingLeft: '2rem', opacity: 0.5 }}>
-    <a href={`https://dotabuff.com/matches/${match_id}`}>dotabuff</a> |{' '}
-    <a href={`https://opendota.com/matches/${match_id}`}>opendota</a>
-  </td>;
+const PartySize = ({ party_size, show }) => <N>{show ? party_size : null}</N>;
 
-const MatchDate = ({ show, start_time, duration }) =>
+const Links = ({ match_id, show }) => (
+  <td style={{ paddingLeft: '2rem', opacity: 0.5 }}>
+    {show ? (
+      <span>
+        <a href={`https://dotabuff.com/matches/${match_id}`}>dotabuff</a> |{' '}
+        <a href={`https://opendota.com/matches/${match_id}`}>opendota</a>
+      </span>
+    ) : null}
+  </td>
+);
+
+const MatchDate = ({ show, start_time, duration }) => (
   <Subdued style={{ textAlign: 'right' }}>
-    {show
-      ? new Date((start_time + duration) * 1000).toLocaleString('en-US', {
-          weekday: 'short',
-          month: '2-digit',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-        })
-      : null}
-  </Subdued>;
+    {show ? (
+      new Date((start_time + duration) * 1000).toLocaleString('en-US', {
+        weekday: 'short',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+      })
+    ) : null}
+  </Subdued>
+);
 const Subdued = styled.td`
   color: #999;
   padding-left: 2rem !important;
