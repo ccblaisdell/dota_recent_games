@@ -1,30 +1,30 @@
-import React from 'react';
-import axios from 'axios';
-import styled from 'styled-components';
-import PLAYER_DATA from '../data/players';
-import HERO_DATA from '../data/heroes';
+import React from "react";
+import axios from "axios";
+import styled from "styled-components";
+import PLAYER_DATA from "../data/players";
+import HERO_DATA from "../data/heroes";
 
-const API = 'https://api.opendota.com/api/';
+const API = "https://api.opendota.com/api/";
 const url = path => API + path;
 
 const PLAYER_NAMES = {
-  '105605638': 'Charlymurphyyy',
-  '6498909': 'Dialuposaurus',
-  '63658494': 'Roamin Ronin',
-  '71227969': 'Uncle Ginger',
-  '44427624': 'hoplyte',
-  '65500551': 'losandro',
-  '44273131': 'mgrif',
+  "105605638": "Charlymurphyyy",
+  "6498909": "Dialuposaurus",
+  "63658494": "Roamin Ronin",
+  "71227969": "Uncle Ginger",
+  "44427624": "hoplyte",
+  "65500551": "losandro",
+  "44273131": "mgrif"
 };
 
 const PLAYER_IDS = [
-  '105605638',
-  '6498909',
-  '63658494',
-  '71227969',
-  '44427624',
-  '65500551',
-  '44273131',
+  "105605638",
+  "6498909",
+  "63658494",
+  "71227969",
+  "44427624",
+  "65500551",
+  "44273131"
 ];
 
 export default class RecentGames extends React.Component {
@@ -33,7 +33,7 @@ export default class RecentGames extends React.Component {
     matchesByPlayer: PLAYER_IDS.reduce((acc, id) => ({ ...acc, [id]: [] }), {}),
     matchIds: [],
     matchPlayers: {},
-    startTimes: {},
+    startTimes: {}
   };
 
   componentWillMount() {
@@ -62,7 +62,7 @@ export default class RecentGames extends React.Component {
       return acc;
     }, {});
     this.setState({
-      heroes: heroMap,
+      heroes: heroMap
     });
     // });
   }
@@ -83,15 +83,15 @@ export default class RecentGames extends React.Component {
               <th />
               <th />
               <th />
-              <th style={{ textAlign: 'right', padding: '2px 4px' }}>K</th>
-              <th style={{ textAlign: 'right', padding: '2px 4px' }}>D</th>
-              <th style={{ textAlign: 'right', padding: '2px 4px' }}>A</th>
-              <th style={{ textAlign: 'right', padding: '2px 4px' }}>party</th>
+              <th style={{ textAlign: "right", padding: "2px 4px" }}>K</th>
+              <th style={{ textAlign: "right", padding: "2px 4px" }}>D</th>
+              <th style={{ textAlign: "right", padding: "2px 4px" }}>A</th>
+              <th style={{ textAlign: "right", padding: "2px 4px" }}>party</th>
               <th />
             </tr>
           </thead>
           {matchIds.map(matchId => (
-            <tbody key={matchId} style={{ padding: '1rem 0' }}>
+            <tbody key={matchId} style={{ padding: "1rem 0" }}>
               {matchPlayers[matchId].map((playerId, i) => {
                 const match = matchesByPlayer[playerId][matchId];
                 const show = i === 0;
@@ -99,7 +99,7 @@ export default class RecentGames extends React.Component {
                   <tr
                     key={playerId}
                     style={{
-                      borderTop: show ? '1px solid #ccc' : '',
+                      borderTop: show ? "1px solid #ccc" : ""
                     }}
                   >
                     <HeroImg {...match} heroes={heroes} />
@@ -148,11 +148,11 @@ const isWin = ({ player_slot, radiant_win }) =>
 
 const MatchResult = match => {
   const won = isWin(match);
-  const text = won ? 'WON :D' : 'lost';
+  const text = won ? "WON :D" : "lost";
   return match.show ? <Result won={won}>{text}</Result> : <Result />;
 };
 const Result = styled.td`
-  color: ${props => (props.won ? 'green' : 'red')};
+  color: ${props => (props.won ? "green" : "red")};
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 `;
@@ -168,24 +168,40 @@ const N = styled.td`
 
 const HeroImg = ({ hero_id, heroes }) => {
   if (!Object.keys(heroes).length) return <td />;
-  const name = heroes[hero_id].name.replace('npc_dota_hero_', '');
-  return (
-    <td>
-      <img
-        height="30"
-        src={`https://api.opendota.com/apps/dota2/images/heroes/${name}_full.png`}
-      />
-    </td>
-  );
+  const hero = heroes[hero_id];
+  if (hero) {
+    const name = heroes[hero_id].name.replace("npc_dota_hero_", "");
+    return (
+      <td>
+        <img
+          height="30"
+          src={`https://api.opendota.com/apps/dota2/images/heroes/${name}_full.png`}
+        />
+      </td>
+    );
+  } else {
+    return (
+      <td>
+        <span
+          style={{
+            height: "30px",
+            width: "53.33px",
+            display: "inline-block",
+            background: "#ccc"
+          }}
+        />
+      </td>
+    );
+  }
 };
 
 const PartySize = ({ party_size, show }) => <N>{show ? party_size : null}</N>;
 
 const Links = ({ match_id, show }) => (
-  <td style={{ paddingLeft: '2rem', opacity: 0.5 }}>
+  <td style={{ paddingLeft: "2rem", opacity: 0.5 }}>
     {show ? (
       <span>
-        <a href={`https://dotabuff.com/matches/${match_id}`}>dotabuff</a> |{' '}
+        <a href={`https://dotabuff.com/matches/${match_id}`}>dotabuff</a> |{" "}
         <a href={`https://opendota.com/matches/${match_id}`}>opendota</a>
       </span>
     ) : null}
@@ -193,16 +209,16 @@ const Links = ({ match_id, show }) => (
 );
 
 const MatchDate = ({ show, start_time, duration }) => (
-  <Subdued style={{ textAlign: 'right' }}>
-    {show ? (
-      new Date((start_time + duration) * 1000).toLocaleString('en-US', {
-        weekday: 'short',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-      })
-    ) : null}
+  <Subdued style={{ textAlign: "right" }}>
+    {show
+      ? new Date((start_time + duration) * 1000).toLocaleString("en-US", {
+          weekday: "short",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit"
+        })
+      : null}
   </Subdued>
 );
 const Subdued = styled.td`
@@ -230,12 +246,12 @@ const addMatches = (playerId, matches) => state => {
   return {
     matchesByPlayer: {
       ...state.matchesByPlayer,
-      [playerId]: matchMap,
+      [playerId]: matchMap
     },
     matchIds: Array.from(matchIds).sort(
       (a, b) => startTimes[b] - startTimes[a]
     ),
     matchPlayers,
-    startTimes,
+    startTimes
   };
 };
