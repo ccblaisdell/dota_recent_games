@@ -70,57 +70,90 @@ export default class RecentGames extends React.Component {
   render() {
     const { heroes, matchesByPlayer, matchIds, matchPlayers } = this.state;
     return (
-      <div>
-        <Title>Recent matches</Title>
-        <Desc>
-          Most recent 20 games per player. When a match is listed, there is no
-          guarantee that it shows all the players who were in the party.
-        </Desc>
-        <Table>
-          <thead>
-            <tr>
-              <th />
-              <th />
-              <th />
-              <th />
-              <th style={{ textAlign: "right", padding: "2px 4px" }}>K</th>
-              <th style={{ textAlign: "right", padding: "2px 4px" }}>D</th>
-              <th style={{ textAlign: "right", padding: "2px 4px" }}>A</th>
-              <th style={{ textAlign: "right", padding: "2px 4px" }}>party</th>
-              <th />
-            </tr>
-          </thead>
-          {matchIds.map(matchId => (
-            <tbody key={matchId} style={{ padding: "1rem 0" }}>
-              {matchPlayers[matchId].map((playerId, i) => {
-                const match = matchesByPlayer[playerId][matchId];
-                const show = i === 0;
-                return (
-                  <tr
-                    key={playerId}
-                    style={{
-                      borderTop: show ? "1px solid #ccc" : ""
-                    }}
-                  >
-                    <HeroImg {...match} heroes={heroes} />
-                    <MatchResult {...match} show={show} />
-                    <PlayerName playerId={playerId} />
-                    <MatchDate {...match} show={show} />
-                    <K {...match} />
-                    <D {...match} />
-                    <A {...match} />
-                    <PartySize {...match} show={show} />
-                    <Links {...match} show={show} />
-                  </tr>
-                );
-              })}
-            </tbody>
-          ))}
-        </Table>
-      </div>
+      <Wrapper>
+        <Col>
+          <Title>Recent matches</Title>
+          <Desc>
+            Most recent 20 games per player. When a match is listed, there is no
+            guarantee that it shows all the players who were in the party.
+          </Desc>
+          <Table>
+            <thead>
+              <tr>
+                <th />
+                <th />
+                <th />
+                <th />
+                <th style={{ textAlign: "right", padding: "2px 4px" }}>K</th>
+                <th style={{ textAlign: "right", padding: "2px 4px" }}>D</th>
+                <th style={{ textAlign: "right", padding: "2px 4px" }}>A</th>
+                <th style={{ textAlign: "right", padding: "2px 4px" }}>
+                  party
+                </th>
+                <th />
+              </tr>
+            </thead>
+            {matchIds.map(matchId => (
+              <tbody key={matchId} style={{ padding: "1rem 0" }}>
+                {matchPlayers[matchId].map((playerId, i) => {
+                  const match = matchesByPlayer[playerId][matchId];
+                  const show = i === 0;
+                  return (
+                    <tr
+                      key={playerId}
+                      style={{
+                        borderTop: show ? "1px solid #ccc" : ""
+                      }}
+                    >
+                      <HeroImg {...match} heroes={heroes} />
+                      <MatchResult {...match} show={show} />
+                      <PlayerName playerId={playerId} />
+                      <MatchDate {...match} show={show} />
+                      <K {...match} />
+                      <D {...match} />
+                      <A {...match} />
+                      <PartySize {...match} show={show} />
+                      <Links {...match} show={show} />
+                    </tr>
+                  );
+                })}
+              </tbody>
+            ))}
+          </Table>
+        </Col>
+        <Col>
+          <Title>Results per player</Title>
+          <Desc>Results of last 20 games for each</Desc>
+          <Wrapper>
+            {PLAYER_IDS.map(playerId => (
+              <Col key={playerId}>
+                <div>{PLAYER_NAMES[playerId]}</div>
+                <ResultList>
+                  {matchIds
+                    .filter(matchId => matchPlayers[matchId].includes(playerId))
+                    .map(matchId => (
+                      <li>
+                        <MatchResult {...this.getMatch(matchId)} show={true} />
+                      </li>
+                    ))}
+                </ResultList>
+              </Col>
+            ))}
+          </Wrapper>
+        </Col>
+      </Wrapper>
     );
   }
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: between;
+  font-family: monospace;
+  min-width: 100%;
+`;
+
+const Col = styled.div`margin: 0 1rem;`;
 
 const Title = styled.h1`
   font-family: monospace;
@@ -139,6 +172,12 @@ const Table = styled.table`
   & td {
     padding: 2px 4px;
   }
+`;
+
+const ResultList = styled.ol`
+  list-style: none;
+  margin: 0;
+  padding: 0;
 `;
 
 const isRadiant = ({ player_slot }) => player_slot < 20;
