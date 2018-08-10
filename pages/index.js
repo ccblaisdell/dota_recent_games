@@ -124,22 +124,22 @@ export default class RecentGames extends React.Component {
         <Col>
           <Title>Results per player</Title>
           <Desc>Results of last 20 games for each</Desc>
-          <Wrapper>
+          <div>
             {PLAYER_IDS.map(playerId => (
-              <Col key={playerId}>
+              <div key={playerId}>
                 <div>{PLAYER_NAMES[playerId]}</div>
                 <ResultList>
                   {matchIds
                     .filter(matchId => matchPlayers[matchId].includes(playerId))
                     .map(matchId => (
-                      <li>
+                      <li key={matchId} style={{ display: "inline-block" }}>
                         <MatchResult {...this.getMatch(matchId)} show={true} />
                       </li>
                     ))}
                 </ResultList>
-              </Col>
+              </div>
             ))}
-          </Wrapper>
+          </div>
         </Col>
       </Wrapper>
     );
@@ -153,7 +153,9 @@ const Wrapper = styled.div`
   min-width: 100%;
 `;
 
-const Col = styled.div`margin: 0 1rem;`;
+const Col = styled.div`
+  margin: 0 1rem;
+`;
 
 const Title = styled.h1`
   font-family: monospace;
@@ -176,7 +178,7 @@ const Table = styled.table`
 
 const ResultList = styled.ol`
   list-style: none;
-  margin: 0;
+  margin: 0 0 1rem;
   padding: 0;
 `;
 
@@ -187,19 +189,23 @@ const isWin = ({ player_slot, radiant_win }) =>
 
 const MatchResult = match => {
   const won = isWin(match);
-  const text = won ? "WON :D" : "lost";
-  return match.show ? <Result won={won}>{text}</Result> : <Result />;
+  const text = won ? "W" : "L";
+  return match.show ? <Result won={won}>{text}</Result> : <Result won={won} />;
 };
 const Result = styled.td`
-  color: ${props => (props.won ? "green" : "red")};
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
+  background-color: ${props => (props.won ? "#693" : "#c33")};
+  color: #fff;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
 `;
 
-const PlayerName = ({ playerId }) => <td>{PLAYER_NAMES[playerId]}</td>;
+const PlayerName = ({ playerId }) => <PN>{PLAYER_NAMES[playerId]}</PN>;
+const PN = styled.td`
+  padding-left: 1rem !important;
+`;
 const K = ({ kills }) => <N color="hsl(120, 60%, 40%)">{kills}</N>;
-const D = ({ deaths }) => <N color="#999">{deaths}</N>;
-const A = ({ assists }) => <N color="hsl(0, 40%, 40%)">{assists}</N>;
+const D = ({ deaths }) => <N color="hsl(0, 40%, 40%)">{deaths}</N>;
+const A = ({ assists }) => <N color="#999">{assists}</N>;
 const N = styled.td`
   text-align: right;
   color: ${props => props.color || null};
