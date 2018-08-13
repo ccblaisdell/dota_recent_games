@@ -71,6 +71,12 @@ export default class RecentGames extends React.Component {
     const { heroes, matchesByPlayer, matchIds, matchPlayers } = this.state;
     return (
       <Wrapper>
+        <style jsx global>{`
+          body {
+            background-color: hsl(200, 15%, 10%);
+            color: #fff;
+          }
+        `}</style>
         <Col>
           <Title>Recent matches</Title>
           <Desc>
@@ -151,6 +157,24 @@ const Wrapper = styled.div`
   justify-content: between;
   font-family: monospace;
   min-width: 100%;
+  flex-direction: column;
+
+  a {
+    color: hsl(200, 70%, 65%);
+    &:visited {
+      color: hsl(200, 40%, 50%);
+    }
+    &:hover {
+      color: hsl(200, 100%, 50%);
+    }
+    &:active {
+      color: hsl(200, 100%, 40%);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
 `;
 
 const Col = styled.div`
@@ -165,7 +189,7 @@ const Title = styled.h1`
 const Desc = styled.p`
   font-family: monospace;
   font-size: 12px;
-  color: #999;
+  color: rgba(255, 255, 255, 0.5);
 `;
 
 const Table = styled.table`
@@ -205,7 +229,7 @@ const PN = styled.td`
 `;
 const K = ({ kills }) => <N color="hsl(120, 60%, 40%)">{kills}</N>;
 const D = ({ deaths }) => <N color="hsl(0, 40%, 40%)">{deaths}</N>;
-const A = ({ assists }) => <N color="#999">{assists}</N>;
+const A = ({ assists }) => <N color="rgba(255,255,255,0.5)">{assists}</N>;
 const N = styled.td`
   text-align: right;
   color: ${props => props.color || null};
@@ -267,7 +291,7 @@ const MatchDate = ({ show, start_time, duration }) => (
   </Subdued>
 );
 const Subdued = styled.td`
-  color: #999;
+  color: rgba(255, 255, 255, 0.5);
   padding-left: 2rem !important;
   padding-right: 2rem !important;
 `;

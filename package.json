@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "deploy":
-      "npm run build && now /Users/ccblaisdell/dev/dota_recent_games/out -n dota-recent",
+    "deploy": "yarn build && netlifyctl deploy",
     "dev": "next",
     "build": "next build && next export",
     "start": "next start"
