@@ -190,6 +190,7 @@ const Desc = styled.p`
   font-family: monospace;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.5);
+  max-width: 60em;
 `;
 
 const Table = styled.table`
@@ -270,7 +271,7 @@ const Links = ({ match_id, show }) => (
   <td style={{ paddingLeft: "2rem", opacity: 0.5 }}>
     {show ? (
       <span>
-        <a href={`https://dotabuff.com/matches/${match_id}`}>dotabuff</a> |{" "}
+        <a href={`https://dotabuff.com/matches/${match_id}`}>dotabuff</a>{" "}
         <a href={`https://opendota.com/matches/${match_id}`}>opendota</a>
       </span>
     ) : null}
