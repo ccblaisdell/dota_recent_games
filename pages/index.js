@@ -244,7 +244,7 @@ const HeroImg = ({ hero_id, heroes }) => {
     return (
       <td>
         <img
-          alt={hero.name}
+          alt=""
           height="30"
           width="53"
           src={`https://api.opendota.com/apps/dota2/images/heroes/${name}_full.png`}
