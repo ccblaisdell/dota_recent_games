@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-import PLAYER_DATA from "../data/players";
+// import PLAYER_DATA from "../data/players";
 import HERO_DATA from "../data/heroes";
 
 const API = "https://api.opendota.com/api/";
@@ -245,7 +245,9 @@ const HeroImg = ({ hero_id, heroes }) => {
       <td>
         <img
           height="30"
+          width="53"
           src={`https://api.opendota.com/apps/dota2/images/heroes/${name}_full.png`}
+          style={{ background: "hsla(200, 50%, 90%, 10%)" }}
         />
       </td>
     );

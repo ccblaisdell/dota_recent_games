@@ -140,7 +140,7 @@ export default [
     localized_name: "Sand King",
     primary_attr: "str",
     attack_type: "Melee",
-    roles: ["Initiator", "Disabler", "Nuker", "Escape", "Jungler"],
+    roles: ["Initiator", "Disabler", "Support", "Nuker", "Escape", "Jungler"],
     legs: 6
   },
   {
@@ -203,7 +203,7 @@ export default [
     localized_name: "Kunkka",
     primary_attr: "str",
     attack_type: "Melee",
-    roles: ["Carry", "Disabler", "Initiator", "Durable", "Nuker"],
+    roles: ["Carry", "Support", "Disabler", "Initiator", "Durable", "Nuker"],
     legs: 2
   },
   {
@@ -1032,6 +1032,15 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Nuker", "Disabler", "Durable", "Escape", "Initiator"],
+    legs: 2
+  },
+  {
+    id: 121,
+    name: "npc_dota_hero_grimstroke",
+    localized_name: "Grimstroke",
+    primary_attr: "int",
+    attack_type: "Ranged",
+    roles: ["Support", "Nuker", "Disabler", "Escape"],
     legs: 2
   }
 ];
