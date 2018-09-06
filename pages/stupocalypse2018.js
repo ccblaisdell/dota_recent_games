@@ -1,11 +1,13 @@
 import React from "react";
-import PLAYER_DATA from "../data/players";
+import PLAYER_DATA from "../data/2018";
 import HERO_DATA from "../data/heroes";
 import Head from "next/head";
 import { Col, Desc, Styles, Title, Wrapper } from "../components/Layout";
 import { PLAYER_IDS, PLAYER_NAMES } from "../constants";
 import Nav from "../components/Nav";
+import MatchList from "../components/MatchList";
 import addMatches from "../utils/addMatches";
+import getHeroes from "../utils/getHeroes";
 
 export default class Stupocalypse2018 extends React.Component {
   state = {
@@ -22,7 +24,7 @@ export default class Stupocalypse2018 extends React.Component {
   }
 
   getMatchesForPlayer(playerId) {
-    const matches = await import(`../data/${playerId}.json`);
+    const matches = PLAYER_DATA[playerId];
     this.setState(addMatches(playerId, matches));
   }
 

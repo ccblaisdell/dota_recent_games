@@ -19,7 +19,7 @@ player_ids = [
   "44273131"
 ]
 
-first_match_id = 4091450619
+first_match_id = 4092979025
 last_match_id = 4097603244
 
 def get(path)
@@ -28,7 +28,6 @@ def get(path)
 end
 
 def url(path)
-  # "https://api.opendota.com/api/players/6498909/matches?limit=200&date=6"
   "https://api.opendota.com/api/#{path}"
 end
 
@@ -37,7 +36,7 @@ player_ids.each do |player_id|
   puts "Getting matches for #{name}"
   body = get(url("players/#{player_id}/matches?limit=200&date=7&significant=0"))
   matches = JSON.parse(body).select do |match|
-    match["match_id"].to_int < last_match_id
+    match["match_id"].to_int <= last_match_id && match["match_id"].to_int >= first_match_id
   end
   File.open("data/2018/#{player_id}.json", "w") do |line|
     line.puts matches.to_json

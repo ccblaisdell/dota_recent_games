@@ -5,8 +5,12 @@ import { Col } from "./Layout";
 export default function Nav() {
   return (
     <Col>
-      <Link href="/">Recent</Link>{" "}
-      <Link href="/stupocalypse2018">Stupocalypse2018</Link>{" "}
+      <Link href="/">
+        <a>Recent</a>
+      </Link>{" "}
+      <Link href="/stupocalypse2018">
+        <a>Stupocalypse2018</a>
+      </Link>{" "}
     </Col>
   );
 }

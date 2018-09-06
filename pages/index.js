@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-import PLAYER_DATA from "../data/players";
+// import PLAYER_DATA from "../data/players";
 import Head from "next/head";
 import { Col, Desc, Styles, Title, Wrapper } from "../components/Layout";
 import Nav from "../components/Nav";
@@ -27,10 +27,10 @@ export default class RecentGames extends React.Component {
   }
 
   getRecentMatchesForPlayer(playerId) {
-    this.setState(addMatches(playerId, PLAYER_DATA[playerId]));
-    // axios
-    //   .get(url(`players/${playerId}/recentMatches`))
-    //   .then(({ data }) => this.setState(addMatches(playerId, data)));
+    // this.setState(addMatches(playerId, PLAYER_DATA[playerId]));
+    axios
+      .get(url(`players/${playerId}/recentMatches`))
+      .then(({ data }) => this.setState(addMatches(playerId, data)));
   }
 
   getMatch(matchId) {
