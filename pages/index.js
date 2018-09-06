@@ -1,14 +1,15 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-// import PLAYER_DATA from "../data/players";
+import PLAYER_DATA from "../data/players";
 import HERO_DATA from "../data/heroes";
+import Head from "next/head";
 
 const API = "https://api.opendota.com/api/";
 const url = path => API + path;
 
 const PLAYER_NAMES = {
-  "105605638": "Charlymurphyyy",
+  // "105605638": "Charlymurphyyy",
   "6498909": "Dialuposaurus",
   "63658494": "Roamin Ronin",
   "71227969": "Uncle Ginger",
@@ -18,7 +19,7 @@ const PLAYER_NAMES = {
 };
 
 const PLAYER_IDS = [
-  "105605638",
+  // "105605638",
   "6498909",
   "63658494",
   "71227969",
@@ -42,10 +43,10 @@ export default class RecentGames extends React.Component {
   }
 
   getRecentMatchesForPlayer(playerId) {
-    // this.setState(addMatches(playerId, PLAYER_DATA[playerId]));
-    axios
-      .get(url(`players/${playerId}/recentMatches`))
-      .then(({ data }) => this.setState(addMatches(playerId, data)));
+    this.setState(addMatches(playerId, PLAYER_DATA[playerId]));
+    // axios
+    //   .get(url(`players/${playerId}/recentMatches`))
+    //   .then(({ data }) => this.setState(addMatches(playerId, data)));
   }
 
   getMatch(matchId) {
@@ -77,6 +78,9 @@ export default class RecentGames extends React.Component {
             color: #fff;
           }
         `}</style>
+        <Head>
+          <title>Recent Dota Matches</title>
+        </Head>
         <Col>
           <Title>Recent matches</Title>
           <Desc>
