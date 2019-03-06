@@ -1042,5 +1042,14 @@ export default [
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler", "Escape"],
     legs: 2
+  },
+  {
+    id: 129,
+    name: "npc_dota_hero_mars",
+    localized_name: "Mars",
+    primary_attr: "str",
+    attack_type: "Melee",
+    roles: ["Carry", "Initiator", "Disabler", "Durable"],
+    legs: 2
   }
 ];
