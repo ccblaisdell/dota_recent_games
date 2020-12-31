@@ -4,7 +4,6 @@ import styled from "styled-components";
 // import PLAYER_DATA from "../data/players";
 import Head from "next/head";
 import { Col, Desc, Styles, Title, Wrapper } from "../components/Layout";
-import Nav from "../components/Nav";
 import MatchList from "../components/MatchList";
 import MatchResult from "../components/MatchResult";
 import { PLAYER_IDS, PLAYER_NAMES } from "../constants";
@@ -18,11 +17,11 @@ export default class RecentGames extends React.Component {
     matchesByPlayer: PLAYER_IDS.reduce((acc, id) => ({ ...acc, [id]: [] }), {}),
     matchIds: [],
     matchPlayers: {},
-    startTimes: {}
+    startTimes: {},
   };
 
   componentWillMount() {
-    PLAYER_IDS.forEach(id => this.getRecentMatchesForPlayer(id));
+    PLAYER_IDS.forEach((id) => this.getRecentMatchesForPlayer(id));
     this.getHeroes();
   }
 
@@ -41,7 +40,7 @@ export default class RecentGames extends React.Component {
 
   getHeroes() {
     this.setState({
-      heroes: getHeroes()
+      heroes: getHeroes(),
     });
   }
 
@@ -49,7 +48,6 @@ export default class RecentGames extends React.Component {
     const { heroes, matchesByPlayer, matchIds, matchPlayers } = this.state;
     return (
       <div>
-        <Nav />
         <Wrapper>
           <Styles />
           <Head>
@@ -72,15 +70,15 @@ export default class RecentGames extends React.Component {
             <Title>Results per player</Title>
             <Desc>Results of last 20 games for each</Desc>
             <div>
-              {PLAYER_IDS.map(playerId => (
+              {PLAYER_IDS.map((playerId) => (
                 <div key={playerId}>
                   <div>{PLAYER_NAMES[playerId]}</div>
                   <ResultList>
                     {matchIds
-                      .filter(matchId =>
+                      .filter((matchId) =>
                         matchPlayers[matchId].includes(playerId)
                       )
-                      .map(matchId => (
+                      .map((matchId) => (
                         <li key={matchId} style={{ display: "inline-block" }}>
                           <MatchResult
                             {...this.getMatch(matchId)}
