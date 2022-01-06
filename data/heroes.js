@@ -6,7 +6,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 2,
@@ -14,8 +14,8 @@ export default [
     localized_name: "Axe",
     primary_attr: "str",
     attack_type: "Melee",
-    roles: ["Initiator", "Durable", "Disabler", "Jungler"],
-    legs: 2
+    roles: ["Initiator", "Durable", "Disabler", "Jungler", "Carry"],
+    legs: 2,
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Nuker", "Durable"],
-    legs: 4
+    legs: 4,
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Disabler", "Jungler", "Nuker", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Nuker", "Jungler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Disabler", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Support", "Initiator", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Pusher", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Support", "Escape", "Nuker", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Escape", "Durable", "Nuker", "Disabler"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 12,
@@ -105,7 +105,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Pusher", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 13,
@@ -114,7 +114,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Initiator", "Disabler", "Escape", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 14,
@@ -123,7 +123,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Disabler", "Initiator", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 15,
@@ -132,7 +132,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Durable", "Nuker", "Pusher"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 16,
@@ -141,7 +141,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Initiator", "Disabler", "Support", "Nuker", "Escape", "Jungler"],
-    legs: 6
+    legs: 6,
   },
   {
     id: 17,
@@ -150,7 +150,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Escape", "Nuker", "Initiator", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 18,
@@ -159,7 +159,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Disabler", "Initiator", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 19,
@@ -168,7 +168,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Nuker", "Pusher", "Initiator", "Durable", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 20,
@@ -177,7 +177,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Support", "Initiator", "Disabler", "Nuker", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 21,
@@ -186,7 +186,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Support", "Disabler", "Escape", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 22,
@@ -194,8 +194,8 @@ export default [
     localized_name: "Zeus",
     primary_attr: "int",
     attack_type: "Ranged",
-    roles: ["Nuker"],
-    legs: 2
+    roles: ["Nuker", "Carry"],
+    legs: 2,
   },
   {
     id: 23,
@@ -204,7 +204,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Support", "Disabler", "Initiator", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 25,
@@ -213,7 +213,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Carry", "Nuker", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 26,
@@ -222,7 +222,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Nuker", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 27,
@@ -231,7 +231,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Pusher", "Disabler", "Nuker", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 28,
@@ -240,7 +240,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Durable", "Initiator", "Disabler", "Escape"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 29,
@@ -248,8 +248,8 @@ export default [
     localized_name: "Tidehunter",
     primary_attr: "str",
     attack_type: "Melee",
-    roles: ["Initiator", "Durable", "Disabler", "Nuker"],
-    legs: 2
+    roles: ["Initiator", "Durable", "Disabler", "Nuker", "Carry"],
+    legs: 2,
   },
   {
     id: 30,
@@ -258,7 +258,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 31,
@@ -267,7 +267,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 32,
@@ -276,7 +276,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 33,
@@ -285,7 +285,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Disabler", "Jungler", "Initiator", "Pusher"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 34,
@@ -294,7 +294,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 35,
@@ -303,7 +303,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 36,
@@ -312,7 +312,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker", "Durable", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 37,
@@ -321,7 +321,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Initiator", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 38,
@@ -330,7 +330,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Initiator", "Disabler", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 39,
@@ -339,7 +339,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 40,
@@ -348,7 +348,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Initiator", "Pusher", "Disabler"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 41,
@@ -357,7 +357,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Initiator", "Disabler", "Escape", "Durable"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 42,
@@ -366,7 +366,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Support", "Durable", "Disabler", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 43,
@@ -375,7 +375,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Pusher", "Nuker", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 44,
@@ -384,7 +384,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 45,
@@ -393,7 +393,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Nuker", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 46,
@@ -402,7 +402,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 47,
@@ -411,7 +411,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Durable", "Initiator", "Disabler"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 48,
@@ -420,7 +420,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 49,
@@ -429,7 +429,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Pusher", "Durable", "Disabler", "Initiator", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 50,
@@ -438,7 +438,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 51,
@@ -447,7 +447,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Initiator", "Disabler", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 52,
@@ -456,7 +456,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Support", "Nuker", "Pusher", "Disabler"],
-    legs: 4
+    legs: 4,
   },
   {
     id: 53,
@@ -465,7 +465,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Jungler", "Pusher", "Escape", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 54,
@@ -474,7 +474,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Durable", "Jungler", "Escape", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 55,
@@ -483,7 +483,7 @@ export default [
     primary_attr: "int",
     attack_type: "Melee",
     roles: ["Initiator", "Jungler", "Escape", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 56,
@@ -492,7 +492,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Escape", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 57,
@@ -501,7 +501,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Support", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 58,
@@ -510,7 +510,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Jungler", "Pusher", "Durable", "Disabler"],
-    legs: 4
+    legs: 4,
   },
   {
     id: 59,
@@ -519,7 +519,7 @@ export default [
     primary_attr: "str",
     attack_type: "Ranged",
     roles: ["Carry", "Durable", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 60,
@@ -528,7 +528,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Initiator", "Durable", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 61,
@@ -537,7 +537,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Pusher", "Escape", "Nuker"],
-    legs: 8
+    legs: 8,
   },
   {
     id: 62,
@@ -546,7 +546,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Escape", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 63,
@@ -555,7 +555,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Escape"],
-    legs: 4
+    legs: 4,
   },
   {
     id: 64,
@@ -564,7 +564,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Pusher", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 65,
@@ -573,7 +573,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Initiator", "Jungler", "Disabler", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 66,
@@ -582,7 +582,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Jungler", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 67,
@@ -591,7 +591,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Durable", "Escape"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 68,
@@ -600,7 +600,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Nuker"],
-    legs: 2
+    legs: 0,
   },
   {
     id: 69,
@@ -609,7 +609,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Disabler", "Initiator", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 70,
@@ -618,7 +618,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Jungler", "Durable", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 71,
@@ -627,7 +627,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Initiator", "Disabler", "Durable", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 72,
@@ -636,7 +636,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 73,
@@ -645,7 +645,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Support", "Durable", "Disabler", "Initiator", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 74,
@@ -654,7 +654,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker", "Disabler", "Escape", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 75,
@@ -663,16 +663,16 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Support", "Disabler", "Initiator", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 76,
     name: "npc_dota_hero_obsidian_destroyer",
-    localized_name: "Outworld Devourer",
+    localized_name: "Outworld Destroyer",
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Carry", "Nuker", "Disabler"],
-    legs: 4
+    legs: 4,
   },
   {
     id: 77,
@@ -681,7 +681,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Pusher", "Jungler", "Durable", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 78,
@@ -690,7 +690,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Initiator", "Durable", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 79,
@@ -699,7 +699,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Initiator", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 80,
@@ -708,7 +708,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Pusher", "Jungler", "Durable"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 81,
@@ -717,7 +717,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Disabler", "Durable", "Pusher", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 82,
@@ -726,7 +726,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Nuker", "Disabler", "Initiator", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 83,
@@ -735,7 +735,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Support", "Initiator", "Durable", "Disabler", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 84,
@@ -744,7 +744,7 @@ export default [
     primary_attr: "int",
     attack_type: "Melee",
     roles: ["Support", "Nuker", "Disabler", "Durable", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 85,
@@ -753,7 +753,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Support", "Durable", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 86,
@@ -762,7 +762,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 87,
@@ -771,7 +771,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Nuker", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 88,
@@ -780,7 +780,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Disabler", "Nuker", "Initiator", "Escape"],
-    legs: 6
+    legs: 6,
   },
   {
     id: 89,
@@ -789,7 +789,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Support", "Pusher", "Disabler", "Initiator", "Escape"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 90,
@@ -798,7 +798,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler", "Jungler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 91,
@@ -807,7 +807,7 @@ export default [
     primary_attr: "str",
     attack_type: "Ranged",
     roles: ["Support", "Escape", "Nuker"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 92,
@@ -816,7 +816,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Durable", "Disabler", "Pusher"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 93,
@@ -825,7 +825,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 94,
@@ -834,7 +834,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Disabler", "Durable"],
-    legs: 0
+    legs: 0,
   },
   {
     id: 95,
@@ -843,7 +843,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Pusher", "Disabler", "Durable"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 96,
@@ -852,7 +852,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Durable", "Initiator", "Disabler", "Nuker", "Escape"],
-    legs: 4
+    legs: 4,
   },
   {
     id: 97,
@@ -861,7 +861,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Initiator", "Disabler", "Nuker", "Escape"],
-    legs: 4
+    legs: 4,
   },
   {
     id: 98,
@@ -870,7 +870,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Nuker", "Durable", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 99,
@@ -879,7 +879,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Durable", "Initiator", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 100,
@@ -888,7 +888,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Initiator", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 101,
@@ -897,7 +897,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 102,
@@ -906,7 +906,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Support", "Carry", "Durable"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 103,
@@ -915,7 +915,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Initiator", "Disabler", "Nuker", "Durable"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 104,
@@ -924,7 +924,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Disabler", "Initiator", "Durable", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 105,
@@ -933,7 +933,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Nuker", "Disabler"],
-    legs: 6
+    legs: 6,
   },
   {
     id: 106,
@@ -942,7 +942,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Nuker", "Disabler", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 107,
@@ -951,7 +951,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Nuker", "Escape", "Disabler", "Initiator", "Durable"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 108,
@@ -960,7 +960,7 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Support", "Nuker", "Disabler", "Durable", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 109,
@@ -969,7 +969,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Pusher", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 110,
@@ -978,7 +978,7 @@ export default [
     primary_attr: "str",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Initiator", "Escape", "Disabler"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 111,
@@ -987,7 +987,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler", "Escape"],
-    legs: 2
+    legs: 0,
   },
   {
     id: 112,
@@ -996,7 +996,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Disabler", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 113,
@@ -1005,7 +1005,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Ranged",
     roles: ["Carry", "Escape", "Nuker"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 114,
@@ -1014,7 +1014,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Escape", "Disabler", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 119,
@@ -1023,7 +1023,7 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler", "Escape"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 120,
@@ -1032,7 +1032,7 @@ export default [
     primary_attr: "agi",
     attack_type: "Melee",
     roles: ["Carry", "Nuker", "Disabler", "Durable", "Escape", "Initiator"],
-    legs: 2
+    legs: 2,
   },
   {
     id: 121,
@@ -1041,7 +1041,34 @@ export default [
     primary_attr: "int",
     attack_type: "Ranged",
     roles: ["Support", "Nuker", "Disabler", "Escape"],
-    legs: 2
+    legs: 0,
+  },
+  {
+    id: 123,
+    name: "npc_dota_hero_hoodwink",
+    localized_name: "Hoodwink",
+    primary_attr: "agi",
+    attack_type: "Ranged",
+    roles: ["Support", "Nuker", "Escape", "Disabler"],
+    legs: 4,
+  },
+  {
+    id: 126,
+    name: "npc_dota_hero_void_spirit",
+    localized_name: "Void Spirit",
+    primary_attr: "int",
+    attack_type: "Melee",
+    roles: ["Carry", "Escape", "Nuker", "Disabler"],
+    legs: 2,
+  },
+  {
+    id: 128,
+    name: "npc_dota_hero_snapfire",
+    localized_name: "Snapfire",
+    primary_attr: "str",
+    attack_type: "Ranged",
+    roles: ["Support", "Nuker", "Disabler", "Escape"],
+    legs: 2,
   },
   {
     id: 129,
@@ -1050,6 +1077,24 @@ export default [
     primary_attr: "str",
     attack_type: "Melee",
     roles: ["Carry", "Initiator", "Disabler", "Durable"],
-    legs: 2
-  }
+    legs: 2,
+  },
+  {
+    id: 135,
+    name: "npc_dota_hero_dawnbreaker",
+    localized_name: "Dawnbreaker",
+    primary_attr: "str",
+    attack_type: "Melee",
+    roles: ["Carry", "Durable"],
+    legs: 2,
+  },
+  {
+    id: 136,
+    name: "npc_dota_hero_marci",
+    localized_name: "Marci",
+    primary_attr: "str",
+    attack_type: "Melee",
+    roles: ["Support", "Carry", "Initiator", "Disabler", "Escape"],
+    legs: 2,
+  },
 ];
