@@ -46,6 +46,7 @@ export default class RecentGames extends React.Component {
 
   render() {
     const { heroes, matchesByPlayer, matchIds, matchPlayers } = this.state;
+    console.log("hello!")
     return (
       <div>
         <Wrapper>
