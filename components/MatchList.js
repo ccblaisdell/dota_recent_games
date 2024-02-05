@@ -7,7 +7,7 @@ export default function MatchList({
   heroes,
   matchIds,
   matchPlayers,
-  matchesByPlayer
+  matchesByPlayer,
 }) {
   return (
     <Table>
@@ -24,7 +24,7 @@ export default function MatchList({
           <th />
         </tr>
       </thead>
-      {matchIds.map(matchId => (
+      {matchIds.map((matchId) => (
         <tbody key={matchId} style={{ padding: "1rem 0" }}>
           {matchPlayers[matchId].map((playerId, i) => {
             const match = matchesByPlayer[playerId][matchId];
@@ -33,7 +33,7 @@ export default function MatchList({
               <tr
                 key={playerId}
                 style={{
-                  borderTop: show ? "1px solid #ccc" : ""
+                  borderTop: show ? "1px solid #ccc" : "",
                 }}
               >
                 <HeroImg {...match} heroes={heroes} />
@@ -81,7 +81,7 @@ const HeroImg = ({ hero_id, heroes }) => {
           alt=""
           height="30"
           width="53"
-          src={`https://api.opendota.com/apps/dota2/images/heroes/${name}_full.png`}
+          src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${name}_full.png`}
           style={{ background: "hsla(200, 50%, 90%, 10%)" }}
         />
       </td>
@@ -94,7 +94,7 @@ const HeroImg = ({ hero_id, heroes }) => {
             height: "30px",
             width: "53.33px",
             display: "inline-block",
-            background: "#ccc"
+            background: "#ccc",
           }}
         />
       </td>
@@ -123,7 +123,7 @@ const MatchDate = ({ show, start_time, duration }) => (
           month: "2-digit",
           day: "2-digit",
           hour: "2-digit",
-          minute: "2-digit"
+          minute: "2-digit",
         })
       : null}
   </Subdued>
@@ -136,5 +136,5 @@ const Subdued = styled.td`
 
 const N = styled.td`
   text-align: right;
-  color: ${props => props.color || null};
+  color: ${(props) => props.color || null};
 `;
