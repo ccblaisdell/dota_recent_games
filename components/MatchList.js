@@ -81,7 +81,7 @@ const HeroImg = ({ hero_id, heroes }) => {
           alt=""
           height="30"
           width="53"
-          src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${name}_full.png`}
+          src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${name}.png`}
           style={{ background: "hsla(200, 50%, 90%, 10%)" }}
         />
       </td>
